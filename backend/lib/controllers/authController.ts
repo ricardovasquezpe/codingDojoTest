@@ -3,6 +3,9 @@ import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
 import { sign } from 'jsonwebtoken';
 import { UserSchema } from '../models/userModel';
+
+var config = require('../config/config.json');
+
 const User = mongoose.model('User', UserSchema);
 
 export class AuthController{
@@ -26,7 +29,7 @@ export class AuthController{
                 return;
             }
 
-            var token = sign(newUser.toJSON(), "123456789", { expiresIn : '24h' });
+            var token = sign(newUser.toJSON(), config.jwtToken, { expiresIn : '24h' });
             res.status(201).json(
                 {
                     "jwt": token
@@ -49,7 +52,7 @@ export class AuthController{
                 return;
             }
       
-            var token = sign(user.toJSON(), "123456789", { expiresIn : '24h' });
+            var token = sign(user.toJSON(), config.jwtToken, { expiresIn : '24h' });
             res.status(200).json({
                "jwt"  : token
             });

@@ -1,4 +1,5 @@
 import { verify } from 'jsonwebtoken';
+var config = require('../config/config.json');
 
 module.exports = function(req,res,next){
     var bearerHeader = req.headers['authorization'];
@@ -14,7 +15,7 @@ module.exports = function(req,res,next){
 
     var bearer = bearerHeader.split(" ");
         token = bearer[1];
-        verify(token, "123456789", function (err, decoded){
+        verify(token, config.jwtToken, function (err, decoded){
             if (err){
                 res.status(400).json(
                     {
