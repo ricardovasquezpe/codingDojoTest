@@ -53,7 +53,7 @@ class MoviesPage extends React.Component {
                                         <button onClick={() => { history.push('/reviews/' + movie._id) }}>
                                             Read Reviews
                                         </button>
-                                        <button>
+                                        <button onClick={() => { history.push('/createreview/' + movie._id) }}>
                                             Write a Review
                                         </button>
                                     </td>

@@ -2,6 +2,7 @@ import React from 'react'
 import LoginPage from './core/login'
 import MoviesPage from './core/movies'
 import CreateMoviePage from './core/movies/create'
+import CreateReviewPage from './core/reviews/create'
 import ReviewsPage from './core/reviews'
 import { Router, Switch, Route } from 'react-router-dom';
 import { Component } from 'react';
@@ -20,6 +21,7 @@ class App extends Component {
               <Route path='/movies' component={MoviesPage} />
               <Route path='/reviews' component={ReviewsPage} />
               <Route path='/createmovie' component={CreateMoviePage} />
+              <Route path='/createreview' component={CreateReviewPage} />
           </Switch>
         </div>
       </Router>

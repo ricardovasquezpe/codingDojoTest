@@ -20,8 +20,8 @@ class ReviewService {
         });
     }
 
-    async create(user:string, rating:number, review:string, movie_id:string) {
-        return fetch(this.config.BASE_URL + this.config.REGISTER, {
+    async create(user:string, rating:number, review:string, movieId:string) {
+        return fetch(this.config.BASE_URL + this.config.CREATE_REVIEW, {
             method: "POST",
             mode: "cors",
             headers: {
@@ -32,7 +32,7 @@ class ReviewService {
                 "user": user,
                 "rating": rating,
                 "review": review,
-                "movie_id": movie_id
+                "movie_id": movieId
             })
         }).then(response => {
             if (!response.ok) {
