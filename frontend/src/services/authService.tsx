@@ -24,7 +24,7 @@ class AuthService {
     }
 
     async register(firstName:string, lastName:string, email:string, password:string) {
-        return fetch(this.config.BASE_URL + this.config.LOGIN, {
+        return fetch(this.config.BASE_URL + this.config.REGISTER, {
             method: "POST",
             mode: "cors",
             headers: {

@@ -89,9 +89,9 @@ class LoginPage extends React.Component {
         }
 
         this.authService.login(this.state.emailLogin, this.state.passwordLogin).then(response => {
+            localStorage.setItem('jwt', response.jwt);
             history.push('/movies');
         }).catch(error => {
-            console.log(error);
             alert("User Not Found");
         });;
     }
@@ -115,7 +115,8 @@ class LoginPage extends React.Component {
         }
 
         this.authService.register(this.state.firstName, this.state.lastName, this.state.email, this.state.password).then(response => {
-            console.log(response);
+            localStorage.setItem('jwt', response.jwt);
+            history.push('/movies');
         }).catch(error => {
             alert("Not able to register the user");
         });;;
