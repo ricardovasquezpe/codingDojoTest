@@ -24,7 +24,7 @@ class MoviesPage extends React.Component {
                 movieList: response
             });
         }).catch(error => {
-            alert("User Not Found");
+            alert("Movies Not Found");
         });;
     }
 
@@ -33,13 +33,13 @@ class MoviesPage extends React.Component {
             <div>
                 <div>
                     <h2>Movie List</h2>
-                    <button style={{float:"right"}} onClick={() => { history.push('/createmovie') }}>Add a new Movie</button>
+                    <button onClick={() => { history.push('/createmovie') }}>Add a new Movie</button>
+                    <button style={{float:"right"}} onClick={() => { this.logout() }}>Logout</button>
                 </div>
                 <table>
                     <thead>
                         <tr>
                             <th>Movie Title</th>
-                            <th>Avg Rating</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -48,7 +48,6 @@ class MoviesPage extends React.Component {
                             return (
                                 <tr key={movie._id}>
                                     <td>{ movie.title }</td>
-                                    <td>10.23</td>
                                     <td>
                                         <button onClick={() => { history.push('/reviews/' + movie._id) }}>
                                             Read Reviews
@@ -64,6 +63,11 @@ class MoviesPage extends React.Component {
                 </table>
             </div>
         )
+    }
+
+    logout(){
+        localStorage.removeItem('jwt');
+        history.push('/');
     }
 }
 
