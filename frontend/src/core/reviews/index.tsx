@@ -14,7 +14,8 @@ class ReviewsPage extends React.Component {
         this.getReviewsList(urlElements[4]);
 
         this.state = {
-            reviewList: []
+            reviewList: [],
+            movieId: urlElements[4]
         }
     }
 
@@ -41,6 +42,7 @@ class ReviewsPage extends React.Component {
                             <th>Reviewer</th>
                             <th>Rating</th>
                             <th>Review</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,6 +52,11 @@ class ReviewsPage extends React.Component {
                                     <td>{ review.user }</td>
                                     <td>{ review.rating }</td>
                                     <td>{ review.review }</td>
+                                    <td>
+                                        <button onClick={() => { this.delete(review._id) }}>
+                                            Delete Review
+                                        </button>
+                                    </td>
                                 </tr>
                             );
                         })}
@@ -57,6 +64,15 @@ class ReviewsPage extends React.Component {
                 </table>
             </div>
             );
+    }
+
+    delete(reviewId:String){
+        this.reviewService.delete(reviewId).then(response => {
+            alert("Review Deleted!");
+            this.getReviewsList(this.state.movieId);
+        }).catch(error => {
+            alert("Review Not Found");
+        });;
     }
 }
 

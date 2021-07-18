@@ -42,6 +42,19 @@ class ReviewService {
         })
     }
 
+    async delete(reviewId: String) {
+        return fetch(this.config.BASE_URL + this.config.DELETE_REVIEW + "?id=" + reviewId, {
+            method: "DELETE",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization" : "Bearer " + localStorage.getItem('jwt')
+            },
+        }).then(response => {
+            return {};
+        });
+    }
+
     handleResponseError(response:any) {
         throw new Error("HTTP error, status = " + response.status);
     }

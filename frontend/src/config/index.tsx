@@ -6,6 +6,7 @@ class Configuration {
     CREATE_MOVIE = "/movie/create";
     LIST_REVIEWS = "/review/list";
     CREATE_REVIEW = "/review/create";
+    DELETE_REVIEW = "/review/delete";
 }
 
 export default Configuration;
