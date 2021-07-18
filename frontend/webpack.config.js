@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: './src/index.tsx',
@@ -24,12 +25,15 @@ module.exports = {
         filename: 'bundle.js',
     },
     devServer: {
-        contentBase: path.join(__dirname, 'public/'),
-        port: 3000,
-        publicPath: 'http://127.0.0.1:3000/dist/',
-        hotOnly: true,
+        contentBase: path.join(__dirname, 'dist/'),
+        /*port: 3000,
+        publicPath: 'http://localhost:3000/dist/',
+        hotOnly: true,*/
         historyApiFallback: true
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()],
+    plugins: [new HtmlWebPackPlugin({
+        template: "./public/index.html",
+        filename: "./index.html"
+      })],
     devtool: 'eval-source-map',
 }
