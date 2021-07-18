@@ -1,11 +1,13 @@
 import React from 'react'
-import { LoginPage } from './core/login'
+import LoginPage from './core/login'
 import { MoviesPage } from './core/movies'
 import { ReviewsPage } from './core/reviews'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Component } from 'react';
 
-const App: React.FC = () => {
-    return (
+class App extends Component {
+  render() {
+      return (
         <Router>
         <div>
           <h2>Moldy Tomatoes</h2>
@@ -18,5 +20,6 @@ const App: React.FC = () => {
         </div>
       </Router>
     )
+  }
 }
 export default App
