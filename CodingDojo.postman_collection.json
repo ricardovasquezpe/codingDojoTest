@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "edd8e25a-39d9-4fb3-a6d1-07aaae5a8b90",
+		"name": "CodingDojo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"ricardo\",\r\n    \"lastname\": \"ricardo\",\r\n    \"email\": \"fffff@test.com\",\r\n    \"password\": \"ricardo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/auth/register",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"rica3r5g5d41o@test.com\",\r\n    \"password\": \"ricardo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/auth/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/movie/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYzMDQwMGU1NDY4ZDQ2MjAwMGNkMzkiLCJmaXJzdG5hbWUiOiJyaWNhcmRvIiwibGFzdG5hbWUiOiJyaWNhcmRvIiwiZW1haWwiOiJmZmZmZkB0ZXN0LmNvbSIsInBhc3N3b3JkIjoicmljYXJkbyIsImNyZWF0ZWRfYXQiOiIyMDIxLTA3LTE3VDE2OjIzOjI4LjAyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMS0wNy0xN1QxNjoyMzoyOC4wMjFaIiwiX192IjowLCJpYXQiOjE2MjY1MzkwMDgsImV4cCI6MTYyNjYyNTQwOH0.GcYsylwqit08VTmd0AEMlWOlzGzo0Q5beSAkVPMxFUg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/movie/create",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"movie",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/movie/list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyZWQxYTQwODllNDMyOTAxNjA4MjUiLCJpYXQiOjE2MjY1MzUzMTUsImV4cCI6MTYyNjYyMTcxNX0.U_zypRqHGI74YRGCtxRTw_2qx5JrLXYEXdwP7fyL9oU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/movie/list",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"movie",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/movie/delete?id=60f2f9419ca52f6a3c33d103",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyZWQxYTQwODllNDMyOTAxNjA4MjUiLCJpYXQiOjE2MjY1MzUzMTUsImV4cCI6MTYyNjYyMTcxNX0.U_zypRqHGI74YRGCtxRTw_2qx5JrLXYEXdwP7fyL9oU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/movie/delete?id=60f2f9419ca52f6a3c33d103",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"movie",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60f2f9419ca52f6a3c33d103"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/review/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyZWQxYTQwODllNDMyOTAxNjA4MjUiLCJpYXQiOjE2MjY1MzUzMTUsImV4cCI6MTYyNjYyMTcxNX0.U_zypRqHGI74YRGCtxRTw_2qx5JrLXYEXdwP7fyL9oU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"Hello\",\r\n    \"rating\": 10,\r\n    \"review\": \"faawfawfawawfafwafwawffaw\",\r\n    \"movie_id\": \"60f2f9309ca52f6a3c33d101\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/review/create",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"review",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/review/list?movieId=60f2f9309ca52f6a3c33d101",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyZWQxYTQwODllNDMyOTAxNjA4MjUiLCJpYXQiOjE2MjY1MzUzMTUsImV4cCI6MTYyNjYyMTcxNX0.U_zypRqHGI74YRGCtxRTw_2qx5JrLXYEXdwP7fyL9oU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/review/list?movieId=60f2f9309ca52f6a3c33d101",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"review",
+						"list"
+					],
+					"query": [
+						{
+							"key": "movieId",
+							"value": "60f2f9309ca52f6a3c33d101"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/review/delete?id=60f2fd0731713f6b9ce90019",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyZWQxYTQwODllNDMyOTAxNjA4MjUiLCJpYXQiOjE2MjY1MzUzMTUsImV4cCI6MTYyNjYyMTcxNX0.U_zypRqHGI74YRGCtxRTw_2qx5JrLXYEXdwP7fyL9oU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/review/delete?id=60f2fd0731713f6b9ce90019",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"review",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60f2fd0731713f6b9ce90019"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://3.16.226.102:4000"
+		}
+	]
+}
