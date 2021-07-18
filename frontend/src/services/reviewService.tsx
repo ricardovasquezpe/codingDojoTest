@@ -5,7 +5,7 @@ class ReviewService {
     config: Configuration = new Configuration();
 
     async list(movieId: String) {
-        return fetch(this.config.BASE_URL + this.config.LIST_REVIEWS + "?movieId = " + movieId, {
+        return fetch(this.config.BASE_URL + this.config.LIST_REVIEWS + "?movieId=" + movieId, {
             method: "GET",
             mode: "cors",
             headers: {
