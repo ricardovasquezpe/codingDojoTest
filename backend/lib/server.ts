@@ -1,6 +1,6 @@
 import app from './app';
 import * as http from 'http';
-const PORT = 3000;
+const PORT = 4000;
 
 http.createServer(app).listen(PORT, () => {
     console.log('Express server listening on port ' + PORT);

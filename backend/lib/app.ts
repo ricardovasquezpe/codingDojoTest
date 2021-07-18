@@ -4,9 +4,9 @@ import { AuthRoutes } from "./routes/authRoute";
 import * as mongoose from "mongoose";
 import { MovieRoutes } from "./routes/movieRoute";
 import { ReviewRoutes } from "./routes/reviewRoute";
+import * as cors from "cors";
 
 class App {
-
     public app: express.Application = express();
     public routePrv: AuthRoutes = new AuthRoutes();
     public routeMovie: MovieRoutes = new MovieRoutes();
@@ -25,6 +25,9 @@ class App {
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({ extended: false }));
         this.app.use(express.static('public'));
+        this.app.use(cors({
+            origin: '*'
+        }));
         //this.app.set('superSecret', '1029384756');
     }
 
