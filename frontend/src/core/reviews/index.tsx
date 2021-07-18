@@ -1,6 +1,7 @@
 import React from 'react'
 import ReviewService from '../../services/reviewService';
 import './style.css'
+import history from '../../utils/history';
 
 class ReviewsPage extends React.Component {
     reviewService: ReviewService;
@@ -32,6 +33,7 @@ class ReviewsPage extends React.Component {
             <div>
                 <div>
                     <h2>Review List</h2>
+                    <button style={{float:'right'}} onClick={() => { history.push('/movies') }}>Back</button>
                 </div>
                 <table>
                     <thead>

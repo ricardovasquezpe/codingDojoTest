@@ -52,6 +52,7 @@ class CreateReviewPage extends React.Component {
                 <br/>
                 <br/>
                 <button  onClick={() => { this.create() }}>Create Review</button>
+                <button onClick={() => { history.push('/movies') }}>Cancel</button>
             </div>
         );
     };

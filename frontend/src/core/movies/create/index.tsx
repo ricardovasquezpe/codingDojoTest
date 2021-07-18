@@ -40,6 +40,7 @@ class CreateMoviePage extends React.Component {
                 <br/>
                 <br/>
                 <button  onClick={() => { this.create() }}>Create Movie</button>
+                <button onClick={() => { history.push('/movies') }}>Cancel</button>
             </div>
         );
     };
