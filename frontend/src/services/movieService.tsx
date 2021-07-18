@@ -20,6 +20,25 @@ class MovieService {
         });
     }
 
+    async create(title:string) {
+        return fetch(this.config.BASE_URL + this.config.CREATE_MOVIE, {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization" : "Bearer " + localStorage.getItem('jwt')
+            },
+            body: JSON.stringify({
+                "title": title
+            })
+        }).then(response => {
+            if (!response.ok) {
+                this.handleResponseError(response);
+            }
+            return response.json();
+        })
+    }
+
     handleResponseError(response:any) {
         throw new Error("HTTP error, status = " + response.status);
     }

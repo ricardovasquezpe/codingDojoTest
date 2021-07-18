@@ -3,6 +3,7 @@ class Configuration {
     LOGIN = "/auth/login";
     REGISTER = "/auth/register";
     LIST_MOVIES = "/movie/list";
+    CREATE_MOVIE = "/movie/create";
 }
 
 export default Configuration;

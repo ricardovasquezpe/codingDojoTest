@@ -1,6 +1,8 @@
 import React from 'react'
 import MovieService from '../../services/movieService';
 import './style.css'
+import history from '../../utils/history';
+
 
 class MoviesPage extends React.Component {
     movieService: MovieService;
@@ -31,6 +33,7 @@ class MoviesPage extends React.Component {
             <div>
                 <div>
                     <h2>Movie List</h2>
+                    <button style={{float:"right"}} onClick={() => { history.push('/createmovie') }}>Add a new Movie</button>
                 </div>
                 <table>
                     <thead>
