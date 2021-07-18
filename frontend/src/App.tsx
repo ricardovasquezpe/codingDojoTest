@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginPage from './core/login'
-import { MoviesPage } from './core/movies'
+import MoviesPage from './core/movies'
 import { ReviewsPage } from './core/reviews'
 import { Router, Switch, Route } from 'react-router-dom';
 import { Component } from 'react';

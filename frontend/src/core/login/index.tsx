@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './style.css'
 import AuthService from '../../services/authService';
 import Validators from '../../utils/validators';
-import './style.css';
 import history from '../../utils/history';
 
 class LoginPage extends React.Component {
@@ -10,8 +9,6 @@ class LoginPage extends React.Component {
     handleInputChangeValues: any;
     state:any;
     validators: Validators;
-    /*const history = useHistory();
-    const handleClick = () => history.push('/movies');*/
 
     constructor(props:any) {
         super(props);
