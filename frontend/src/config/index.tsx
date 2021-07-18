@@ -4,6 +4,7 @@ class Configuration {
     REGISTER = "/auth/register";
     LIST_MOVIES = "/movie/list";
     CREATE_MOVIE = "/movie/create";
+    LIST_REVIEWS = "/review/list";
 }
 
 export default Configuration;
