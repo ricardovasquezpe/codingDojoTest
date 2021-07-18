@@ -20,13 +20,10 @@ class AuthService {
                 this.handleResponseError(response);
             }
             return response.json();
-        })
-        .catch(error => {
-            this.handleError(error);
         });
     }
 
-    async register(firstname:string, lastname:string, email:string, password:string) {
+    async register(firstName:string, lastName:string, email:string, password:string) {
         return fetch(this.config.BASE_URL + this.config.LOGIN, {
             method: "POST",
             mode: "cors",
@@ -34,8 +31,8 @@ class AuthService {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                "firstname": firstname,
-                "lastname": lastname,
+                "firstname": firstName,
+                "lastname": lastName,
                 "email": email,
                 "password": password
             })
@@ -45,9 +42,6 @@ class AuthService {
             }
             return response.json();
         })
-        .catch(error => {
-            this.handleError(error);
-        });
     }
 
     handleError(error:any) {

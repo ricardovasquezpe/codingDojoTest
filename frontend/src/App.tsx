@@ -2,13 +2,14 @@ import React from 'react'
 import LoginPage from './core/login'
 import { MoviesPage } from './core/movies'
 import { ReviewsPage } from './core/reviews'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 import { Component } from 'react';
+import history from './utils/history';
 
 class App extends Component {
   render() {
       return (
-        <Router>
+        <Router history={history}>
         <div>
           <h2>Moldy Tomatoes</h2>
           <hr />

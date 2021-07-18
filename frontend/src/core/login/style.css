@@ -1,0 +1,7 @@
+.container {
+    display: table;
+    width: 100%;
+}
+.container div {
+    display: table-cell;
+}

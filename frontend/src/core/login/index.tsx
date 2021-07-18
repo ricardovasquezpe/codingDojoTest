@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import './style.css'
-import { useHistory } from 'react-router-dom';
 import AuthService from '../../services/authService';
 import Validators from '../../utils/validators';
+import './style.css';
+import history from '../../utils/history';
 
 class LoginPage extends React.Component {
     authService: AuthService;
@@ -23,6 +24,8 @@ class LoginPage extends React.Component {
             email: "",
             password: "",
             confirmPassword: "",
+            emailLogin : "",
+            passwordLogin: ""
         };
     }
 
@@ -37,7 +40,7 @@ class LoginPage extends React.Component {
 
     render(){
         return (
-            <div>
+            <div className={"container"}>
                 <div>
                     <label>First Name</label>
                     <br/>
@@ -63,14 +66,46 @@ class LoginPage extends React.Component {
                     <br/>
                     <button type="button" onClick={() => this.register()}>Register</button>
                 </div>
+                <div>
+                <label>Email</label>
+                    <br/>
+                    <input type="email" name="emailLogin" onChange={this.handleInputChange} value={this.state.emailLogin}></input>
+                    <br/>
+                    <label>Password</label>
+                    <br/>
+                    <input type="password" name="passwordLogin" onChange={this.handleInputChange} value={this.state.passwordLogin}></input>
+                    <br/>
+                    <br/>
+                    <button type="button" onClick={() => this.login()}>Login</button>
+                </div>
             </div>
         )
     }
 
     login(){
-        this.authService.login("rica3r5g5d41o@test.com", "ricardo").then(response => {
-            console.log(response);
-        });
+        if(!this.validateLogin()){
+            alert("Please verify all input data in the login form");
+            return;
+        }
+
+        this.authService.login(this.state.emailLogin, this.state.passwordLogin).then(response => {
+            history.push('/movies');
+        }).catch(error => {
+            console.log(error);
+            alert("User Not Found");
+        });;
+    }
+
+    validateLogin():boolean{
+        if(this.state.emailLogin.length == 0 || this.state.passwordLogin.length == 0){
+            return false;
+        }
+
+        if(!this.validators.validateEmail(this.state.emailLogin)){
+            return false;
+        }
+
+        return true;
     }
 
     register(){
@@ -81,7 +116,9 @@ class LoginPage extends React.Component {
 
         this.authService.register(this.state.firstName, this.state.lastName, this.state.email, this.state.password).then(response => {
             console.log(response);
-        });
+        }).catch(error => {
+            alert("Not able to register the user");
+        });;;
     }
 
     validateRegister():boolean{
